@@ -1,0 +1,30 @@
+Fedora uses a package management system to install, update, remove, and manage software on your system. This system is built on the RPM Package Manager (rpm) and uses tools like DNF (command line) and GNOME Software (graphical interface) to make software management easy and reliable.
+
+Key Functions of Package Management in Fedora
+Automates Software Installation: It handles downloading and installing software packages from trusted repositories, ensuring you get stable and compatible versions.
+
+Manages Dependencies: When you install a package, the manager automatically installs any other software (dependencies) that package needs to run correctly.
+
+Simplifies Updates and Upgrades: You can easily update all your installed software and get security patches with a single command.
+
+Removes Software Cleanly: Uninstalling a package removes all its files and can also remove unused dependencies, keeping your system tidy.
+
+Verifies Integrity: It checks that installed packages haven’t been corrupted or tampered with.
+
+Provides Information: You can quickly check which packages are installed, what versions they are, and what files they include.
+
+Why Did You Install the htop Package?
+You installed the htop package to gain access to a powerful, interactive process monitoring tool. htop provides a real-time, user-friendly interface for viewing system performance, resource usage, and running processes. It allows you to:
+
+Monitor CPU, memory, and swap usage visually
+
+Identify resource-heavy processes
+
+Manage (kill or renice) processes directly from the interface
+
+Navigate and sort processes easily, with features that improve on the traditional top command
+
+Installing htop through Fedora’s package management system ensures you get a version that is compatible, secure, and easily updated in the future.
+
+In summary:
+Fedora’s package management system makes it easy and safe to install tools like htop, which help you monitor and manage your system’s performance efficiently
