@@ -1,0 +1,21 @@
+When you use the ping command on Linux to test connectivity to a server, each packet sent includes an ICMP sequence number, displayed as icmp_seq in the output. This sequence number starts at 1 and increments by one for each subsequent echo request packet sent to the server. The sequence number helps you track each individual packet and its corresponding reply, making it easier to identify lost or out-of-order packets.
+
+For example, a typical output might look like this:
+
+text
+64 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=0.123 ms
+64 bytes from 192.168.1.1: icmp_seq=2 ttl=64 time=0.120 ms
+64 bytes from 192.168.1.1: icmp_seq=3 ttl=64 time=0.119 ms
+icmp_seq=1 means this is the first packet sent.
+
+icmp_seq=2 is the second, and so on.
+
+If you notice missing sequence numbers in the output, it indicates that some packets were lost or not replied to, which could signal network issues.
+
+Summary Table
+
+Field	Description
+icmp_seq	Sequence number of the ICMP packet, increments with each request
+ttl	Time To Live (hop counter)
+time	Round-trip time for the packet
+In summary, the ICMP sequence number (icmp_seq) in Linux ping is simply a counter that uniquely identifies each echo request packet sent to the server, allowing you to detect lost or delayed packets
