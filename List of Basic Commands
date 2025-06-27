@@ -1,0 +1,71 @@
+Navigation & Directory Management
+Navigate to your home directory and list all files, including hidden ones.
+cd ~ && ls -a
+
+Create a directory called practice and a subdirectory testdir inside it.
+mkdir -p ~/practice/testdir
+
+Move into testdir and create three empty files: file1.txt, file2.txt, and file3.txt.
+cd ~/practice/testdir && touch file1.txt file2.txt file3.txt
+
+Display the absolute path of your current directory.
+pwd
+
+Rename file1.txt to renamed.txt.
+mv file1.txt renamed.txt
+
+Copy renamed.txt to your home directory.
+cp renamed.txt ~/
+
+Delete file3.txt.
+rm file3.txt
+
+Permissions & Ownership
+Change the permissions of file2.txt to be readable and writable only by the owner.
+chmod 600 file2.txt
+
+Change the owner of file2.txt to another user (requires sudo).
+sudo chown <anotheruser> file2.txt
+(Replace <anotheruser> with a valid username.)
+
+Text Processing
+Write "Hello Fedora" into file2.txt and display its content.
+echo "Hello Fedora" > file2.txt && cat file2.txt
+
+Show the first 5 lines of /etc/passwd.
+head -5 /etc/passwd
+
+Search for the word "bash" in /etc/passwd.
+grep bash /etc/passwd
+
+System Monitoring
+Display currently running processes.
+ps aux
+
+Show disk usage of your home directory in human-readable format.
+du -sh ~
+
+Check the system’s memory usage.
+free -h
+
+Networking
+Display your IP address and network interfaces.
+ip addr
+
+Test connectivity to example.com with four ping requests.
+ping -c 4 example.com
+
+User and Group Management
+Create a new user called testuser.
+sudo useradd testuser
+
+Set a password for testuser.
+sudo passwd testuser
+
+Scripting
+Create and run a simple script that prints "Fedora is awesome!"
+
+bash
+echo -e '#!/bin/bash\necho "Fedora is awesome!"' > ~/fedora.sh
+chmod +x ~/fedora.sh
+~/fedora.sh
