@@ -1,0 +1,45 @@
+1. Windows Subsystem for Linux (WSL)
+WSL is a compatibility layer that allows you to run a real Linux environment—including most command-line tools, utilities, and applications—directly on Windows, without the need for a virtual machine or dual boot.
+
+How to Use Linux Commands with WSL:
+Install WSL and a Linux distribution (like Ubuntu):
+
+Open PowerShell as Administrator and run:
+
+powershell
+wsl --install
+Restart your computer if prompted.
+
+After restart, open the installed Linux distribution from the Start menu (e.g., Ubuntu).
+
+Run Linux commands from Windows terminal:
+
+You can open your Linux terminal (e.g., Ubuntu) and use any Linux command:
+
+bash
+ls -la
+pwd
+grep "text" filename
+Or, from Command Prompt or PowerShell, you can run a Linux command directly using:
+
+powershell
+wsl ls -la
+wsl grep "pattern" file.txt
+This runs the command in your default WSL Linux environment.
+
+Mixing Windows and Linux Commands:
+You can run Windows programs from within WSL (e.g., notepad.exe) and Linux commands from Windows using wsl <command>.
+
+Example: List files in Windows from Linux:
+
+bash
+cmd.exe /C dir
+2. Alternative: Git Bash
+Git Bash is another tool that provides a Bash emulation environment on Windows, allowing you to run many common Linux commands (but not all).
+
+Download and install Git for Windows to use Git Bash.
+
+3. Other Options
+Cygwin: A large collection of GNU and Open Source tools that provide functionality similar to a Linux distribution on Windows.
+
+Third-party tools: Tools like MobaXterm or MSYS2 also provide Linux command-line environments.
