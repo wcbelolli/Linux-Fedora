@@ -1,0 +1,8 @@
+Example Architecture
+text
+User → Internet → Fedora VM (Nginx/Node.js) → Cloud DB
+                               ↓
+                        Cloud Storage (S3)
+                               ↓
+                         Cloud APIs (Auth, Email)
+This approach combines local control with cloud scalability. The VM handles request processing while cloud services manage stateful components, providing cost efficiency and flexibility. For production workloads, consider containerizing the app with Podman for easier cloud migration later.
