@@ -1,0 +1,54 @@
+The error
+
+text
+rsync: connection unexpectedly closed (0 bytes received so far) [sender]
+rsync error: unexplained error (code 255) at io.c(232) [sender=3.2.7]
+is most commonly caused by problems with the SSH connection or the remote rsync command. Here are the main causes and steps to diagnose:
+
+rsync is not installed on the target system:
+If the remote system does not have rsync installed, the SSH connection will succeed, but the remote shell will not find the rsync command, causing the connection to close unexpectedly.
+
+SSH connection issues:
+If SSH cannot connect (due to authentication failure, firewall, network issues, or host key problems), rsync will fail with this error. Test your SSH connection separately using:
+
+bash
+ssh user@remotehost
+If this fails, resolve the SSH issue first.
+
+SSH key or host key issues:
+Problems such as a changed host key, missing or incorrect SSH keys, or ECDSA host key changes can cause the connection to be refused or closed.
+
+Network or timeout issues:
+Network interruptions or SSH timeouts can break the connection, leading to this error. Increasing SSH timeout settings can help in some cases.
+
+Firewall or security restrictions:
+A firewall on the remote host may be blocking SSH connections or rate-limiting them, causing intermittent failures.
+
+How to Diagnose and Fix
+Check if rsync is installed on the remote host
+Log in via SSH and run rsync --version. If it’s missing, install it.
+
+Test the SSH connection directly
+Run ssh user@remotehost to ensure you can connect without issues.
+
+Check SSH keys and known_hosts
+If you see errors about host key verification or DNS spoofing, clear the old key using:
+
+bash
+ssh-keygen -R remotehost
+Then reconnect to accept the new key.
+
+Review firewall rules
+Make sure your IP is not blocked or rate-limited by the remote firewall.
+
+Increase SSH timeout settings
+Add the following to your ~/.ssh/config to help with timeouts:
+
+text
+Host *
+  ServerAliveInterval 60
+  ServerAliveCountMax 30
+Verbose output for debugging
+Add -v or -vvv to your rsync or ssh command to get more detailed error messages.
+
+In summary, this error nearly always means rsync or SSH failed on the remote end—most often because rsync is missing or SSH cannot connect/authenticate properly
