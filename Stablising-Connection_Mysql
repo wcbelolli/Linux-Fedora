@@ -1,0 +1,10 @@
+#granting all privileges to public_user in random_facts_db data base
+grant all privileges on random_facts_db.* to 'public_user'@'%';
+
+#Don't forget to flush the command before leaving
+flush privileges
+
+#Creatinng a connection to a host in AWS using the public IP
+mysql -h ec2-public-ip-address -u public_user -p
+
+Enter password: StrongPassword123!
